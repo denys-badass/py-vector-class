@@ -1,4 +1,5 @@
 from __future__ import annotations
+import math
 
 
 class Vector:
@@ -27,6 +28,12 @@ class Vector:
         norm_x = self.x / length
         norm_y = self.y / length
         return Vector(norm_x, norm_y)
+
+    def angle_between(self, vector: Vector) -> int:
+        prod = self * vector
+        len_prod = self.get_length() * vector.get_length()
+        degree = math.degrees(math.acos(prod / len_prod))
+        return round(degree)
 
     @classmethod
     def create_vector_by_two_points(cls, start_point: tuple[float], end_point: tuple[float]) -> Vector:
