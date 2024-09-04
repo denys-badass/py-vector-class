@@ -21,7 +21,7 @@ class Vector:
         return Vector(self.x * vector, self.y * vector)
 
     def get_length(self) -> float:
-        return (self.x ** 2 + self.y ** 2) ** 0.5
+        return math.hypot(self.x, self.y)
 
     def get_normalized(self) -> Vector:
         length = self.get_length()
