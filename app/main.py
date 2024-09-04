@@ -22,6 +22,12 @@ class Vector:
     def get_length(self) -> float:
         return (self.x ** 2 + self.y ** 2) ** 0.5
 
+    def get_normalized(self) -> Vector:
+        length = self.get_length()
+        norm_x = self.x / length
+        norm_y = self.y / length
+        return Vector(norm_x, norm_y)
+
     @classmethod
     def create_vector_by_two_points(cls, start_point: tuple[float], end_point: tuple[float]) -> Vector:
         return Vector(end_point[0] - start_point[0], end_point[1] - start_point[1])
