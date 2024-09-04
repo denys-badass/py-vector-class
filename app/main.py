@@ -9,3 +9,6 @@ class Vector:
 
     def __add__(self, vector: Vector) -> Vector:
         return Vector(self.x + vector.x, self.y + vector.y)
+
+    def __sub__(self, vector: Vector) -> Vector:
+        return Vector(self.x - vector.x, self.y - vector.y)
